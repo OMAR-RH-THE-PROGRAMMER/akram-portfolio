@@ -1,0 +1,4278 @@
+:root {
+
+    --blue: #112E7C;
+    --blue-light: #3155A5;
+
+    --fog: #F1F3F6;
+
+    --white: #FFFFFF;
+
+    --black: #101522;
+
+    --gray: #70798A;
+
+    --orange: #FF8A4C;
+    --yellow: #FFD45C;
+    --purple: #9B8AFB;
+    --pink: #FF8FB3;
+    --green: #65CFA3;
+
+    --border: #E2E6ED;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+padding-top: 80px;
+    font-family: "Cairo", sans-serif;
+
+    background: var(--fog);
+
+    color: var(--black);
+
+    overflow-x: hidden;
+
+    font-size: 16px;
+    font-weight: 700 !important; /* زيادة سماكة خط الجسم */
+    color: #101522 !important;   /* تغميق اللون الأسود */
+
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.container {
+
+    width: min(1180px, 90%);
+
+    margin: auto;
+
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+.header {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 85px;
+
+    z-index: 100;
+position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* لضمان ظهور الهيدر فوق جميع عناصر الصفحة */
+    background-color: rgba(255, 255, 255, 0.95) !important; /* خلفية بيضاء شبه معتمة لوضوح النصوص */
+    backdrop-filter: blur(10px); /* تأثير ضبابي جمالي خلف الهيدر */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* ظل خفيف لفصل الهيدر عن محتوى الصفحة */
+    transition: all 0.3s ease;
+}
+
+
+.inner-header {
+
+    position: relative;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.nav {
+
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+}
+
+
+.logo span,
+.footer-logo span {
+
+    color: var(--orange);
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.nav-links a {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.nav-links a:hover,
+.nav-links .active {
+
+    color: var(--blue);
+
+}
+
+
+.nav-button {
+
+    background: var(--blue);
+
+    color: white !important;
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+BUTTONS
+========================= */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 14px 28px;
+
+    border-radius: 35px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: .35s;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+.primary-btn {
+
+    background: var(--blue);
+
+    color: white;
+
+    box-shadow: 0 15px 35px rgba(17,46,124,.2);
+
+}
+
+
+.secondary-btn {
+
+    border: 1px solid rgba(17,46,124,.2);
+
+    color: var(--blue);
+
+    background: white;
+
+}
+
+
+.white-btn {
+
+    background: white;
+
+    color: var(--blue);
+
+}
+
+
+/* =========================
+FLOATING SHAPES
+========================= */
+
+.floating-shapes {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+.shape {
+
+    position: absolute;
+
+    opacity: .8;
+
+    animation: floating 7s ease-in-out infinite;
+
+}
+
+
+.circle {
+
+    border-radius: 50%;
+
+}
+
+
+.blue-circle {
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #6E8FEA;
+
+}
+
+
+.orange-square {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 14px;
+
+    background: var(--orange);
+
+    transform: rotate(20deg);
+
+}
+
+
+.yellow-triangle {
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 32px solid transparent;
+
+    border-right: 32px solid transparent;
+
+    border-bottom: 60px solid var(--yellow);
+
+}
+
+
+.purple-ring {
+
+    width: 90px;
+
+    height: 90px;
+
+    border: 9px solid var(--purple);
+
+    border-radius: 50%;
+
+}
+
+
+.pink-circle {
+
+    width: 35px;
+
+    height: 35px;
+
+    background: var(--pink);
+
+}
+
+
+.blue-square {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #6384DC;
+
+    transform: rotate(35deg);
+
+}
+
+
+.green-triangle {
+
+    width: 50px;
+
+    height: 50px;
+
+    background: var(--green);
+
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+}
+
+
+.orange-ring {
+
+    width: 55px;
+
+    height: 55px;
+
+    border: 7px solid var(--orange);
+
+    border-radius: 50%;
+
+}
+
+
+.dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+}
+
+
+.blue-dot {
+
+    background: var(--blue);
+
+}
+
+
+.pink-dot {
+
+    background: var(--pink);
+
+}
+
+
+.yellow-dot {
+
+    background: var(--yellow);
+
+}
+
+
+/* positions */
+
+.blue-circle {
+
+    top: 12%;
+
+    left: 5%;
+
+}
+
+
+.orange-square {
+
+    top: 18%;
+
+    right: 8%;
+
+}
+
+
+.yellow-triangle {
+
+    top: 50%;
+
+    left: 8%;
+
+}
+
+
+.purple-ring {
+
+    top: 35%;
+
+    right: 4%;
+
+}
+
+
+.pink-circle {
+
+    bottom: 20%;
+
+    left: 18%;
+
+}
+
+
+.blue-square {
+
+    bottom: 12%;
+
+    right: 15%;
+
+}
+
+
+.green-triangle {
+
+    bottom: 18%;
+
+    right: 35%;
+
+}
+
+
+.orange-ring {
+
+    top: 70%;
+
+    left: 35%;
+
+}
+
+
+.blue-dot {
+
+    top: 30%;
+
+    left: 25%;
+
+}
+
+
+.pink-dot {
+
+    top: 25%;
+
+    right: 30%;
+
+}
+
+
+.yellow-dot {
+
+    bottom: 30%;
+
+    right: 8%;
+
+}
+
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero {
+
+    min-height: 850px;
+
+    padding-top: 120px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+}
+
+
+.hero-grid {
+
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.hero-badge {
+
+    display: inline-block;
+
+    color: var(--blue);
+
+    border: 1px solid rgba(17,46,124,.25);
+
+    border-radius: 30px;
+
+    padding: 7px 18px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px,6vw,75px);
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    margin: 25px 0 10px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--blue);
+
+}
+
+
+.hero h2 {
+
+    font-size: clamp(25px,3vw,40px);
+
+    line-height: 1.5;
+
+    font-weight: 800;
+
+}
+
+
+.hero h2 strong {
+
+    color: var(--orange);
+
+}
+
+
+.hero-content > p {
+
+    color: var(--gray);
+
+    max-width: 650px;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin: 20px 0;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+
+.hero-stats {
+
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 45px;
+
+}
+
+
+.hero-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.hero-stats strong {
+
+    color: var(--blue);
+
+    font-size: 24px;
+
+}
+
+
+.hero-stats span {
+
+    color: var(--gray);
+
+    font-size: 9px;
+
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+
+    height: 600px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.hero-circle {
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    background: var(--blue);
+
+    border-radius: 50%;
+
+    bottom: 10px;
+
+}
+
+
+.hero-ring {
+
+    position: absolute;
+
+    width: 520px;
+
+    height: 520px;
+
+    border: 2px dashed rgba(17,46,124,.25);
+
+    border-radius: 50%;
+
+    animation: rotate 25s linear infinite;
+
+}
+
+
+@keyframes rotate {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.person-card {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 340px;
+
+    height: 470px;
+
+    display: flex;
+
+    align-items: end;
+
+}
+
+
+.person-placeholder {
+
+    width: 100%;
+
+    height: 85%;
+
+    border-radius: 180px 180px 0 0;
+
+    background: #17191F;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+}
+
+
+.floating-label {
+
+    position: absolute;
+
+    z-index: 10;
+
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.label-one {
+
+    top: 20%;
+
+    right: 0;
+
+}
+
+
+.label-two {
+
+    bottom: 28%;
+
+    left: 0;
+
+}
+
+
+.label-three {
+
+    top: 42%;
+
+    left: -20px;
+
+}
+
+
+/* =========================
+SECTIONS
+========================= */
+
+.section {
+
+    padding: 110px 0;
+
+}
+
+
+.about {
+
+    background: var(--fog);
+
+}
+
+
+.section-title {
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-title.center {
+
+    text-align: center;
+
+}
+
+
+.section-title span {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+}
+
+
+.section-title h2 {
+
+    font-size: clamp(35px,5vw,55px);
+
+    line-height: 1.4;
+
+    margin-top: 10px;
+
+}
+
+
+.section-title strong {
+
+    color: var(--blue);
+
+}
+
+
+/* ABOUT */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+.about-text p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 2.2;
+
+    margin-bottom: 20px;
+
+}
+
+
+.about-card {
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 25px 60px rgba(17,46,124,.08);
+
+}
+
+
+.card-icon {
+
+    font-size: 40px;
+
+}
+
+
+.about-card h3 {
+
+    font-size: 25px;
+
+    margin: 20px 0 10px;
+
+}
+
+
+.about-card p {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+}
+
+
+/* SERVICES */
+
+.services {
+
+    background: white;
+
+}
+
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 18px;
+
+}
+
+
+.service-card {
+
+    padding: 30px 25px;
+
+    background: var(--fog);
+
+    border-radius: 25px;
+
+    position: relative;
+
+    transition: .4s;
+
+    border: 1px solid transparent;
+
+}
+
+
+.service-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(17,46,124,.15);
+
+    box-shadow: 0 20px 50px rgba(17,46,124,.1);
+
+}
+
+
+.service-card > span {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    font-size: 10px;
+
+    color: #AAB1BF;
+
+}
+
+
+.service-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.service-card h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.service-card p {
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+    line-height: 2;
+
+}
+
+
+.featured-service {
+
+    background: var(--blue);
+
+    color: white;
+
+}
+
+
+.featured-service p {
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+/* =========================
+PHILOSOPHY
+========================= */
+
+.philosophy {
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 120px 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.philosophy-content {
+
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.philosophy-content > span {
+
+    color: #B8C8FF;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.philosophy h2 {
+
+    font-size: clamp(40px,6vw,70px);
+
+    margin: 20px 0;
+
+}
+
+
+.philosophy h2 strong {
+
+    color: var(--orange);
+
+}
+
+
+.philosophy p {
+
+    font-size: 18px;
+
+    line-height: 2.3;
+
+    color: rgba(255,255,255,.78);
+
+}
+
+
+.philosophy-line {
+
+    width: 100px;
+
+    height: 4px;
+
+    background: var(--orange);
+
+    margin: 30px 0 15px;
+
+    border-radius: 5px;
+
+}
+
+
+.philosophy small {
+
+    color: #C5D0F0;
+
+}
+
+
+.philosophy-shape {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 50%;
+
+    left: -180px;
+
+    top: -150px;
+
+}
+
+
+/* =========================
+WHY ME
+========================= */
+
+.why-me {
+
+    background: var(--fog);
+
+}
+
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+}
+
+
+.why-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    gap: 25px;
+
+    align-items: flex-start;
+
+    transition: .3s;
+
+}
+
+
+.why-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.why-card b {
+
+    color: var(--orange);
+
+    font-size: 13px;
+
+}
+
+
+.why-card h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+}
+
+
+.why-card p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 2;
+
+}
+
+
+.large-why {
+
+    grid-column: span 2;
+
+    background: var(--blue);
+
+    color: white;
+
+}
+
+
+.large-why p {
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+/* =========================
+EXPERIENCE
+========================= */
+
+.experience {
+
+    background: white;
+
+}
+
+
+.experience-card {
+
+    background: var(--fog);
+
+    border-radius: 35px;
+
+    padding: 55px;
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+}
+
+
+.experience-number {
+
+    font-size: 55px;
+
+    font-weight: 900;
+
+    color: var(--blue);
+
+}
+
+
+.experience-card p {
+
+    font-size: 17px;
+
+    line-height: 2.2;
+
+}
+
+
+.experience-card span {
+
+    display: block;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+PERSONAL
+========================= */
+
+.personal {
+
+    background: var(--fog);
+
+}
+
+
+.personal-grid {
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 100px;
+
+}
+
+
+.personal-title h2 {
+
+    font-size: 50px;
+
+    margin-top: 10px;
+
+}
+
+
+.personal-title span {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+}
+
+
+.personal-title strong {
+
+    color: var(--blue);
+
+}
+
+
+.personal-text {
+
+    padding-top: 20px;
+
+}
+
+
+.personal-text p {
+
+    color: var(--gray);
+
+    font-size: 16px;
+
+    line-height: 2.3;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+COURSES PREVIEW
+========================= */
+
+.courses-preview {
+
+    background: white;
+
+    padding: 100px 0;
+
+}
+
+
+.preview-inner {
+
+    background: var(--blue);
+
+    border-radius: 35px;
+
+    padding: 55px;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.preview-inner > div > span {
+
+    color: #B8C8FF;
+
+    font-size: 11px;
+
+}
+
+
+.preview-inner h2 {
+
+    font-size: 38px;
+
+    margin: 8px 0;
+
+}
+
+
+.preview-inner h2 strong {
+
+    color: var(--orange);
+
+}
+
+
+.preview-inner p {
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+CONTACT
+========================= */
+
+.contact {
+
+    background: var(--blue);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 120px 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.contact-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.contact-content > span {
+
+    color: #B8C8FF;
+
+    font-size: 12px;
+
+}
+
+
+.contact h2 {
+
+    font-size: clamp(40px,6vw,65px);
+
+    line-height: 1.4;
+
+    margin: 15px 0;
+
+}
+
+
+.contact h2 strong {
+
+    color: var(--orange);
+
+}
+
+
+.contact p {
+
+    color: rgba(255,255,255,.7);
+
+    line-height: 2;
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.contact-shape {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 50%;
+
+    right: -150px;
+
+    bottom: -250px;
+
+}
+
+
+/* =========================
+PAGE HERO
+========================= */
+
+.page-hero {
+
+    min-height: 450px;
+
+    background: var(--blue);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 150px 20px 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.page-hero > span {
+
+    position: relative;
+
+    z-index: 5;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    padding: 7px 20px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+}
+
+
+.page-hero h1 {
+
+    position: relative;
+
+    z-index: 5;
+
+    font-size: clamp(40px,6vw,70px);
+
+    margin: 25px 0 10px;
+
+}
+
+
+.page-hero h1 strong {
+
+    color: #AFC2FF;
+
+}
+
+
+.page-hero p {
+
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 13px;
+
+    line-height: 2;
+
+}
+
+
+/* =========================
+PACKAGES
+========================= */
+
+.packages-area,
+.courses-area {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 120px 0;
+
+    min-height: 800px;
+
+}
+
+
+.packages-grid,
+.courses-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+/* path */
+
+.packages-path,
+.courses-path {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 2;
+
+}
+
+
+.packages-path path,
+.courses-path path {
+
+    fill: none;
+
+    stroke: rgba(17,46,124,.35);
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 12 15;
+
+    /* animation: pathAnimation 4s linear infinite; */
+
+}
+
+
+@keyframes pathAnimation {
+
+    to {
+        stroke-dashoffset: -108;
+    }
+
+}
+
+
+/* package */
+
+.package-card {
+
+    background: white;
+
+    border-radius: 35px;
+
+    padding: 38px 30px;
+
+    position: relative;
+
+    z-index: 10;
+
+    box-shadow: 0 25px 70px rgba(17,46,124,.08);
+
+    transition: .4s;
+
+}
+
+
+.package-card:hover {
+
+    transform: translateY(-12px);
+
+}
+
+
+.featured-package {
+
+    background: var(--blue);
+
+    color: white;
+
+    transform: translateY(-20px);
+
+}
+
+
+.featured-package:hover {
+
+    transform: translateY(-30px);
+
+}
+
+
+.popular {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    background: var(--orange);
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+}
+
+
+.package-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--blue);
+
+}
+
+
+.featured-package .package-top {
+
+    color: #B8C8FF;
+
+}
+
+
+.package-top small {
+
+    letter-spacing: 2px;
+
+}
+
+
+.package-card h2 {
+
+    font-size: 30px;
+
+    margin: 25px 0 8px;
+
+}
+
+
+.package-card > p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 2;
+
+}
+
+
+.featured-package > p {
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+.price {
+
+    margin-top: 25px;
+
+}
+
+
+.price small {
+
+    display: block;
+
+    color: var(--gray);
+
+    font-size: 9px;
+
+}
+
+
+.featured-package .price small {
+
+    color: #B8C8FF;
+
+}
+
+
+.price strong {
+
+    font-size: 45px;
+
+}
+
+
+.divider {
+
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 25px 0;
+
+}
+
+
+.featured-package .divider {
+
+    background: rgba(255,255,255,.15);
+
+}
+
+
+.package-card ul {
+
+    list-style: none;
+
+}
+
+
+.package-card li {
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+    margin: 14px 0;
+
+}
+
+
+.featured-package li {
+
+    color: rgba(255,255,255,.8);
+
+}
+
+
+.package-btn {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding: 13px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--blue);
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.featured-package .package-btn {
+
+    background: white;
+
+    border-color: white;
+
+}
+
+
+/* =========================
+COURSES
+========================= */
+
+.courses-area {
+
+    background: white;
+
+}
+
+
+.course-card {
+
+    background: var(--fog);
+
+    border: 1px solid var(--border);
+
+    border-radius: 35px;
+
+    padding: 35px;
+
+    position: relative;
+
+    z-index: 10;
+
+    transition: .4s;
+
+}
+
+
+.course-card:hover {
+
+    transform: translateY(-12px);
+
+    box-shadow: 0 25px 60px rgba(17,46,124,.12);
+
+}
+
+
+.featured-course {
+
+    background: var(--blue);
+
+    color: white;
+
+    transform: translateY(-20px);
+
+}
+
+
+.featured-course:hover {
+
+    transform: translateY(-30px);
+
+}
+
+
+.course-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.course-label {
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 900;
+
+}
+
+
+.featured-course .course-label {
+
+    color: #B8C8FF;
+
+}
+
+
+.course-card h2 {
+
+    font-size: 25px;
+
+    margin: 12px 0;
+
+}
+
+
+.course-card > p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 2;
+
+}
+
+
+.featured-course > p {
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+.course-meta {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+}
+
+
+.course-meta span {
+
+    background: white;
+
+    color: var(--gray);
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+}
+
+
+.featured-course .course-meta span {
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+}
+
+
+.course-price {
+
+    font-size: 35px;
+
+    font-weight: 900;
+
+    margin-top: 25px;
+
+}
+
+
+.course-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 25px;
+
+    padding: 13px 18px;
+
+    margin-top: 20px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.featured-course .course-btn {
+
+    background: white;
+
+    color: var(--blue);
+
+}
+
+
+/* =========================
+CTA
+========================= */
+
+.simple-cta {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: var(--fog);
+
+}
+
+
+.simple-cta > span {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+.simple-cta h2 {
+
+    font-size: clamp(35px,5vw,55px);
+
+    margin: 10px 0 25px;
+
+}
+
+
+.simple-cta strong {
+
+    color: var(--blue);
+
+}
+
+
+.simple-cta p {
+
+    color: var(--gray);
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+
+    background: white;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.footer {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.footer-logo {
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.footer-links a {
+
+    color: var(--gray);
+
+    font-size: 10px;
+
+}
+
+
+.footer p {
+
+    color: var(--gray);
+
+    font-size: 9px;
+
+}
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width: 1000px) {
+
+    .nav-links {
+
+        gap: 12px;
+
+    }
+
+    .nav-links a {
+
+        font-size: 10px;
+
+    }
+
+    .services-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 800px) {
+
+    .menu-btn {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 200;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 80px;
+
+        right: 5%;
+
+        left: 5%;
+
+        background: white;
+
+        padding: 20px;
+
+        border-radius: 20px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        box-shadow: 0 20px 50px rgba(0,0,0,.15);
+
+    }
+
+
+    .nav-links.show {
+
+        display: flex;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .hero-content > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-stats {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-visual {
+
+        height: 500px;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .packages-grid,
+    .courses-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+    }
+
+
+    .featured-package,
+    .featured-course {
+
+        transform: none;
+
+    }
+
+
+    .featured-package:hover,
+    .featured-course:hover {
+
+        transform: translateY(-12px);
+
+    }
+
+
+    .packages-path,
+    .courses-path {
+
+        display: none;
+
+    }
+
+
+    .personal-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .preview-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .experience-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .large-why {
+
+        grid-column: auto;
+
+    }
+
+
+    .footer {
+
+        flex-direction: column;
+
+        padding: 30px 0;
+
+        text-align: center;
+
+    }
+
+}
+
+
+@media(max-width: 550px) {
+
+    .hero {
+
+        min-height: auto;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .hero-stats {
+
+        gap: 20px;
+
+    }
+
+
+    .hero-circle {
+
+        width: 320px;
+
+        height: 320px;
+
+    }
+
+
+    .hero-ring {
+
+        width: 370px;
+
+        height: 370px;
+
+    }
+
+
+    .person-card {
+
+        width: 240px;
+
+        height: 390px;
+
+    }
+
+
+    .floating-label {
+
+        font-size: 8px;
+
+        padding: 9px 12px;
+
+    }
+
+
+    .label-three {
+
+        left: 0;
+
+    }
+
+
+    .section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .philosophy p {
+
+        font-size: 15px;
+
+    }
+
+
+    .preview-inner {
+
+        padding: 35px 25px;
+
+    }
+
+
+    .preview-inner h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .packages-area,
+    .courses-area {
+
+        padding: 80px 0;
+
+    }
+
+
+    .package-card,
+    .course-card {
+
+        padding: 28px 22px;
+
+    }
+
+
+    .floating-shapes .shape {
+
+        transform: scale(.7);
+
+    }
+
+}
+
+
+/* ===== AKRAM PREMIUM READABILITY UPDATE ===== */
+
+body{font-size:16px;font-weight:600}
+.nav-links a{font-size:15px;font-weight:800}
+.btn{font-size:15px;font-weight:900}
+
+.page-hero h1{font-size:clamp(42px,6vw,76px);font-weight:900;line-height:1.25}
+.page-hero p{color:#fff;opacity:1;font-size:18px;font-weight:700;line-height:2}
+.page-hero>span{font-size:15px;font-weight:900}
+
+.package-card,.course-card{font-weight:700}
+.package-card>p,.course-card>p{color:#4E586A;font-size:16px;font-weight:700;line-height:2.05}
+.featured-package>p,.featured-course>p{color:#fff;opacity:.96}
+.package-card h2,.course-card h2{font-weight:900}
+.package-card li,.course-card li{font-size:15px;font-weight:800;line-height:1.8}
+.featured-package li{color:#fff;opacity:.98}
+.price strong{font-size:48px;font-weight:900}
+.price small{font-size:13px;font-weight:800}
+.package-btn,.course-btn{font-size:15px;font-weight:900}
+
+/* ===== PACKAGES ===== */
+/* =========================================================
+   AKRAM — PREMIUM COMPACT PACKAGES
+   تصميم باقات أكثر احترافية + مضغوط + واضح
+   ========================================================= */
+
+/* -----------------------------
+   منطقة الباقات
+----------------------------- */
+
+.packages-area {
+    padding: 70px 0 90px;
+    min-height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* -----------------------------
+   شبكة الباقات
+----------------------------- */
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    max-width: 1180px;
+    margin: 0 auto;
+
+    align-items: stretch;
+}
+
+
+/* -----------------------------
+   الباقة الأولى
+   لا تجعلها تأخذ عرض الصفحة
+----------------------------- */
+
+.package-card:first-child {
+    grid-column: auto;
+}
+
+
+/* -----------------------------
+   الكرت الأساسي
+----------------------------- */
+
+.package-card {
+    position: relative;
+
+    padding: 24px 23px 22px;
+
+    border-radius: 24px;
+
+    min-height: 0;
+    height: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(17, 46, 124, 0.10);
+
+    box-shadow:
+        0 12px 35px rgba(17, 46, 124, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* تأثير Hover */
+
+.package-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 22px 50px rgba(17, 46, 124, 0.14);
+
+    border-color: rgba(17, 46, 124, 0.25);
+}
+
+
+/* -----------------------------
+   خط علوي جميل للكرت
+----------------------------- */
+
+.package-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #112E7C;
+
+    opacity: 0.9;
+}
+
+
+/* -----------------------------
+   الوصف الموجود فوق الباقة
+----------------------------- */
+
+.package-card::before {
+    display: block;
+
+    padding: 11px 13px;
+
+    margin-bottom: 16px;
+
+    border-radius: 13px;
+
+    background: #F1F3F6;
+
+    color: #4E586A;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    line-height: 1.85;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   وصف كل باقة
+   ========================================================= */
+
+
+/* 1 — النمو الشامل */
+
+.packages-grid .package-card:nth-child(1)::before {
+    content:
+        "منظومة إعلانية متكاملة تجمع أهم المنصات للوصول إلى العملاء وتحويل الاهتمام إلى زيارات وطلبات ومبيعات.";
+}
+
+
+/* 2 — Google */
+
+.packages-grid .package-card:nth-child(2)::before {
+    content:
+        "مناسبة للمشاريع التي تريد الوصول إلى أشخاص يبحثون بالفعل عن منتجاتها أو خدماتها ولديهم نية للشراء.";
+}
+
+
+/* 3 — TikTok */
+
+.packages-grid .package-card:nth-child(3)::before {
+    content:
+        "تركّز على الفيديو والمحتوى لاختبار الجمهور والوصول إلى أفضل فرص جذب العملاء وتحقيق التحويلات.";
+}
+
+
+/* 4 — Instagram */
+
+.packages-grid .package-card:nth-child(4)::before {
+    content:
+        "مناسبة للعلامات والمتاجر التي تريد استثمار Instagram وتحويل التفاعل والاهتمام إلى زيارات وطلبات.";
+}
+
+
+/* 5 — Snapchat */
+
+.packages-grid .package-card:nth-child(5)::before {
+    content:
+        "حل إعلاني يركز على الجمهور المستهدف وتحويل المشاهدات والاهتمام إلى زيارات وطلبات فعلية.";
+}
+
+
+/* =========================================================
+   الباقة المميزة
+   ========================================================= */
+
+.package-card.featured-package {
+    background: #112E7C;
+
+    border: 2px solid #112E7C;
+
+    box-shadow:
+        0 20px 50px rgba(17, 46, 124, 0.20);
+}
+
+
+/* وصف الباقة المميزة */
+
+.package-card.featured-package::before {
+    background: rgba(255, 255, 255, 0.11);
+
+    color: #ffffff;
+}
+
+
+/* الخط العلوي */
+
+.package-card.featured-package::after {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   رأس الباقة
+   ========================================================= */
+
+.package-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+}
+
+
+.package-top span {
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+
+.package-top small {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   عنوان الباقة
+   ========================================================= */
+
+.package-card h2 {
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    font-weight: 900;
+
+    margin: 10px 0 5px;
+}
+
+
+/* النص تحت العنوان */
+
+.package-card > p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    font-weight: 700;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   السعر
+   ========================================================= */
+
+.price {
+    margin-top: 15px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 7px;
+}
+
+
+.price strong {
+    font-size: 38px;
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+
+.price small {
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   الفاصل
+   ========================================================= */
+
+.divider {
+    height: 1px;
+
+    margin: 15px 0;
+
+    background: rgba(17, 46, 124, 0.10);
+}
+
+
+/* =========================================================
+   قائمة الخدمات
+   ========================================================= */
+
+.package-card ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.package-card li {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+    font-size: 12.5px;
+
+    line-height: 1.65;
+
+    font-weight: 800;
+
+    margin: 6px 0;
+}
+
+
+/* علامة الصح */
+
+.package-card li::before {
+    content: "✓";
+
+    flex-shrink: 0;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    color: #112E7C;
+}
+
+
+/* الباقة الزرقاء */
+
+.package-card.featured-package li::before {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   صندوق التركيز
+   ========================================================= */
+
+.package-focus {
+    margin-top: 15px;
+
+    padding: 11px 13px;
+
+    border-radius: 13px;
+
+    background: #F1F3F6;
+
+    color: #30394A;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    font-weight: 800;
+}
+
+
+/* التركيز داخل الباقة المميزة */
+
+.package-card.featured-package .package-focus {
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   زر الباقة
+   ========================================================= */
+
+.package-btn {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 10px 14px;
+
+    border-radius: 16px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+
+.package-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   شارة الأكثر طلباً
+   ========================================================= */
+
+.popular {
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   المسار المتحرك خلف الباقات
+   ========================================================= */
+
+.packages-path {
+    opacity: 0.9;
+
+    pointer-events: none;
+}
+
+
+.packages-path path {
+    stroke-width: 7;
+
+    stroke-dasharray: 16 13;
+}
+
+
+/* =========================================================
+   الملاحظات أسفل الباقات
+   ========================================================= */
+
+.package-notes {
+    max-width: 1000px;
+
+    margin: 38px auto 0;
+
+    padding: 22px 27px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(17, 46, 124, 0.08);
+
+    box-shadow:
+        0 12px 35px rgba(17, 46, 124, 0.06);
+}
+
+
+.package-notes h3 {
+    font-size: 20px;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+
+.package-notes ul {
+    margin: 0;
+
+    padding-right: 20px;
+}
+
+
+.package-notes li {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    font-weight: 700;
+
+    margin: 6px 0;
+}
+
+
+/* =========================================================
+   الشاشات المتوسطة
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+
+        padding: 0 20px;
+    }
+
+}
+
+
+/* =========================================================
+   الموبايل
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .packages-area {
+        padding: 55px 0 75px;
+    }
+
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 520px;
+
+        gap: 17px;
+
+        padding: 0 16px;
+    }
+
+
+    .package-card {
+        padding: 22px 19px;
+
+        border-radius: 21px;
+    }
+
+
+    .package-card::before {
+        font-size: 11.5px;
+
+        padding: 10px 12px;
+
+        line-height: 1.8;
+    }
+
+
+    .package-card h2 {
+        font-size: 23px;
+    }
+
+
+    .package-card > p {
+        font-size: 12.5px;
+    }
+
+
+    .price strong {
+        font-size: 35px;
+    }
+
+
+    .package-card li {
+        font-size: 12px;
+
+        margin: 5px 0;
+    }
+
+
+    .package-focus {
+        font-size: 11.5px;
+    }
+
+
+    .package-notes {
+        margin: 28px 16px 0;
+
+        padding: 20px 18px;
+    }
+
+
+    .package-notes h3 {
+        font-size: 18px;
+    }
+
+
+    .package-notes li {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   الشاشات الصغيرة جداً
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .package-card {
+        padding: 20px 16px;
+    }
+
+
+    .package-card h2 {
+        font-size: 21px;
+    }
+
+
+    .package-card li {
+        font-size: 11.5px;
+    }
+
+
+    .price strong {
+        font-size: 32px;
+    }
+
+}
+/* ===== COURSES ===== */
+
+.courses-page h1{max-width:1000px;margin-left:auto;margin-right:auto}
+.courses-page p{max-width:850px}
+.courses-area{background:#F1F3F6;padding:100px 0 140px}
+.courses-path{z-index:1;transform:scaleX(-1)}
+.courses-path path{
+    stroke:#112E7C;
+    stroke-width:9;
+    stroke-dasharray:18 14;
+    opacity:.95;
+    filter:drop-shadow(0 5px 8px rgba(17,46,124,.18))
+}
+.course-card{background:#fff;padding:40px;border:2px solid rgba(17,46,124,.08)}
+.course-card h2{font-size:30px;line-height:1.5}
+.course-card>p{font-size:16px}
+.course-card.featured-course{background:#112E7C;border-color:#112E7C}
+.course-label{font-size:13px;font-weight:900}
+.course-meta{flex-wrap:wrap}
+.course-meta span{font-size:13px;font-weight:800;padding:9px 13px}
+.course-price{font-size:42px;font-weight:900}
+
+/* ===== COURSE SALES CONTENT ===== */
+
+.course-sales{background:#fff;padding:110px 0}
+.course-sales .container{max-width:1100px}
+.sales-intro{text-align:center;max-width:900px;margin:0 auto 75px}
+.sales-intro .eyebrow{display:inline-block;color:#112E7C;font-size:15px;font-weight:900;margin-bottom:15px}
+.sales-intro h2{font-size:clamp(34px,5vw,58px);line-height:1.35;font-weight:900;margin-bottom:22px}
+.sales-intro h2 strong{color:#112E7C}
+.sales-intro p{color:#4E586A;font-size:18px;line-height:2.2;font-weight:700}
+
+.problem-section{background:#F1F3F6;padding:100px 0}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.problem-card{background:#fff;border-radius:25px;padding:30px;box-shadow:0 15px 45px rgba(17,46,124,.07);border:1px solid #E2E6ED}
+.problem-card .quote{color:#112E7C;font-size:20px;font-weight:900;line-height:1.8;margin-bottom:14px}
+.problem-card p{color:#4E586A;font-size:15px;font-weight:700;line-height:2}
+
+.learning-section{background:#fff;padding:110px 0}
+.learning-title{text-align:center;margin-bottom:60px}
+.learning-title span{color:#112E7C;font-size:15px;font-weight:900}
+.learning-title h2{font-size:clamp(34px,5vw,55px);font-weight:900;margin-top:10px}
+
+.learning-day{position:relative;background:#F1F3F6;border-radius:30px;padding:42px;margin-bottom:30px;border:1px solid #E2E6ED}
+.learning-day::before{content:"";position:absolute;right:0;top:25px;bottom:25px;width:6px;background:#112E7C;border-radius:10px}
+.learning-day h3{font-size:27px;font-weight:900;margin-bottom:15px;padding-right:18px}
+.learning-day p{color:#4E586A;font-size:16px;font-weight:700;line-height:2.1;padding-right:18px}
+.learning-day ul{list-style:none;margin-top:22px;padding-right:18px}
+.learning-day li{color:#101522;font-size:16px;font-weight:800;line-height:2;margin:8px 0}
+.learning-day li::before{content:"✓";color:#FF8A4C;margin-left:9px;font-weight:900}
+
+.resources-section{background:#112E7C;color:#fff;padding:105px 0}
+.resources-title{text-align:center;margin-bottom:50px}
+.resources-title h2{font-size:clamp(34px,5vw,55px);font-weight:900}
+.resources-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.resource-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:28px 22px;text-align:center}
+.resource-card strong{display:block;font-size:16px;font-weight:900;line-height:1.8}
+
+.faq-section{background:#F1F3F6;padding:110px 0}
+.faq-list{max-width:950px;margin:auto}
+.faq-item{background:#fff;border-radius:22px;padding:27px 30px;margin-bottom:16px;border:1px solid #E2E6ED}
+.faq-item h3{color:#112E7C;font-size:19px;font-weight:900;line-height:1.8;margin-bottom:9px}
+.faq-item p{color:#4E586A;font-size:15px;font-weight:700;line-height:2.1}
+
+.course-details{background:#fff;padding:100px 0}
+.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.detail-box{background:#F1F3F6;border-radius:25px;padding:30px;border:1px solid #E2E6ED}
+.detail-box h3{color:#112E7C;font-size:21px;font-weight:900;margin-bottom:12px}
+.detail-box p{color:#4E586A;font-size:15px;font-weight:700;line-height:2}
+
+.final-course-cta{background:#112E7C;color:#fff;padding:110px 20px;text-align:center}
+.final-course-cta h2{font-size:clamp(35px,5vw,60px);line-height:1.4;font-weight:900;margin-bottom:20px}
+.final-course-cta p{max-width:750px;margin:0 auto 30px;font-size:17px;font-weight:700;line-height:2;color:#fff;opacity:.95}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:800px){
+    .packages-grid,.problem-grid,.resources-grid,.details-grid{grid-template-columns:1fr}
+    .package-card:first-child{grid-column:auto;max-width:none}
+    .packages-path,.courses-path{display:none}
+    .package-card,.course-card{padding:32px 24px}
+    .package-card h2{font-size:29px}
+    .package-card>p,.course-card>p{font-size:15px}
+    .package-card li{font-size:14px}
+    .package-notes{padding:28px 22px;margin-left:5%;margin-right:5%}
+    .learning-day{padding:30px 24px}
+    .learning-day h3{font-size:23px}
+    .learning-day p,.learning-day li{font-size:15px}
+}
+
+@media(max-width:550px){
+    .page-hero p{font-size:16px}
+    .price strong{font-size:42px}
+    .course-card h2{font-size:25px}
+    .sales-intro p{font-size:16px}
+}
+
+
+
+/* تعديل الهيدر والتوسيط والوضوح البسيط */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around; /* توزيع العناصر وتوسيطها تلقائياً */
+    align-items: center;            /* توسيط عمودي */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header a {
+    color: #000000 !important;      /* جعل الخط أسود واضح جداً */
+    font-size: 15px !important;     /* تكبير الخط */
+    font-weight: bold !important;   /* جعل الخط عريض */
+    text-decoration: none;
+    margin: 0 13px;
+}
+
+
+
+/* =========================================================
+   PACKAGES PAGE - FINAL CLEAN FIX
+   ضع هذا الكود في آخر ملف style.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. PACKAGES AREA
+   ========================================================= */
+
+.packages-area {
+    position: relative !important;
+    padding: 70px 0 100px !important;
+    background: #f3f5f8 !important;
+    overflow: hidden !important;
+}
+
+
+/* إخفاء المسار القديم إذا كان يسبب مشاكل */
+
+.packages-path {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. CATEGORY / SECTION
+   يعمل مع الأقسام الجديدة:
+   صناعة المحتوى
+   إدارة المحتوى
+   المبيعات
+   ========================================================= */
+
+.packages-category {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto 90px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.packages-category:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   3. CATEGORY HEADING
+   ========================================================= */
+
+.category-heading {
+    margin-bottom: 30px !important;
+    text-align: right;
+}
+
+
+.category-heading h2 {
+    margin: 0 !important;
+    color: #111111 !important;
+
+    font-size: clamp(30px, 4vw, 46px) !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1.4 !important;
+}
+
+
+.category-heading p {
+    max-width: 750px;
+
+    margin: 12px 0 0 !important;
+
+    color: #555555 !important;
+
+    font-size: 16px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.9 !important;
+}
+
+
+/* الخط الأسود تحت عنوان القسم */
+
+.category-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 2px;
+
+    margin-top: 20px;
+
+    background: #111111 !important;
+}
+
+
+/* =========================================================
+   LABEL ABOVE CATEGORY
+   ========================================================= */
+
+.category-label {
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    padding: 7px 16px !important;
+
+    margin-bottom: 12px !important;
+
+    border: 1px solid #111111 !important;
+
+    border-radius: 30px !important;
+
+    background: #ffffff !important;
+
+    color: #111111 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 900 !important;
+}
+
+
+/* =========================================================
+   4. PACKAGES GRID
+   ========================================================= */
+
+.packages-grid {
+    display: grid !important;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 24px !important;
+
+    width: 100% !important;
+
+    max-width: 1180px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    align-items: stretch !important;
+}
+
+
+/* منع أول كرت من أخذ عرض مختلف */
+
+.package-card:first-child {
+    grid-column: auto !important;
+
+    width: auto !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   5. PACKAGE CARD
+   ========================================================= */
+
+.package-card {
+    position: relative !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    min-width: 0 !important;
+
+    height: 100% !important;
+
+    padding: 28px 25px !important;
+
+    background: #ffffff !important;
+
+    color: #111111 !important;
+
+    border: 1.5px solid #111111 !important;
+
+    border-radius: 20px !important;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+
+    overflow: hidden !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+
+/* إزالة الـ pseudo content القديم */
+
+.package-card::before {
+    content: none !important;
+
+    display: none !important;
+}
+
+
+/* الخط العلوي */
+
+.package-card::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: 0 !important;
+
+    right: 0 !important;
+
+    width: 100% !important;
+
+    height: 4px !important;
+
+    background: #111111 !important;
+}
+
+
+/* Hover */
+
+.package-card:hover {
+    transform: translateY(-5px) !important;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =========================================================
+   6. FEATURED PACKAGE
+   ========================================================= */
+
+.package-card.featured-package {
+    background: #112e7c !important;
+
+    color: #ffffff !important;
+
+    border-color: #112e7c !important;
+
+    box-shadow: 0 18px 40px rgba(17, 46, 124, 0.22) !important;
+}
+
+
+.package-card.featured-package::after {
+    background: #ffffff !important;
+}
+
+
+.package-card.featured-package h2,
+.package-card.featured-package h3,
+.package-card.featured-package p,
+.package-card.featured-package li,
+.package-card.featured-package small {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   7. PACKAGE TOP
+   ========================================================= */
+
+.package-top {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    gap: 15px !important;
+
+    padding-bottom: 14px !important;
+
+    margin-bottom: 16px !important;
+
+    border-bottom: 1px solid #111111 !important;
+}
+
+
+.featured-package .package-top {
+    border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+/* رقم الباقة */
+
+.package-top span {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 38px !important;
+
+    height: 38px !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: #111111 !important;
+
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+
+    font-weight: 900 !important;
+}
+
+
+.featured-package .package-top span {
+    background: #ffffff !important;
+
+    color: #112e7c !important;
+}
+
+
+/* اسم الباقة بالإنجليزية */
+
+.package-top small {
+    color: #111111 !important;
+
+    font-size: 10px !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: 0.8px !important;
+}
+
+
+.featured-package .package-top small {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   8. PACKAGE TITLE
+   ========================================================= */
+
+.package-card h2 {
+    margin: 0 0 10px !important;
+
+    color: #111111 !important;
+
+    font-size: 25px !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1.5 !important;
+}
+
+
+.featured-package h2 {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   9. PACKAGE DESCRIPTION
+   ========================================================= */
+
+.package-card > p {
+    min-height: auto !important;
+
+    margin: 0 0 18px !important;
+
+    color: #555555 !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.8 !important;
+}
+
+
+.featured-package > p {
+    color: #ffffff !important;
+
+    opacity: 0.95 !important;
+}
+
+
+/* =========================================================
+   10. PRICE
+   ========================================================= */
+
+.price {
+    display: flex !important;
+
+    align-items: baseline !important;
+
+    flex-wrap: wrap !important;
+
+    gap: 7px !important;
+
+    padding: 8px 0 15px !important;
+
+    margin: 0 !important;
+}
+
+
+.price small {
+    color: #111111 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 800 !important;
+}
+
+
+.price strong {
+    color: #111111 !important;
+
+    font-size: 42px !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1 !important;
+}
+
+
+.featured-package .price small,
+.featured-package .price strong {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   11. DIVIDER
+   جميع الخطوط سوداء
+   ========================================================= */
+
+.divider {
+    width: 100% !important;
+
+    height: 1px !important;
+
+    margin: 15px 0 18px !important;
+
+    background: #111111 !important;
+
+    border: none !important;
+
+    opacity: 1 !important;
+}
+
+
+.featured-package .divider {
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   12. FEATURES TITLE
+   ========================================================= */
+
+.package-card h3 {
+    margin: 0 0 14px !important;
+
+    color: #111111 !important;
+
+    font-size: 16px !important;
+
+    font-weight: 900 !important;
+}
+
+
+.featured-package h3 {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   13. FEATURES LIST
+   ========================================================= */
+
+.package-card ul {
+    list-style: none !important;
+
+    margin: 0 0 22px !important;
+
+    padding: 0 !important;
+}
+
+
+.package-card ul li {
+    position: relative !important;
+
+    padding: 0 24px 10px 0 !important;
+
+    margin: 0 !important;
+
+    color: #111111 !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.75 !important;
+}
+
+
+/* علامة الصح */
+
+.package-card ul li::before {
+    content: "✓" !important;
+
+    position: absolute !important;
+
+    right: 0 !important;
+
+    top: 0 !important;
+
+    color: #111111 !important;
+
+    font-weight: 900 !important;
+}
+
+
+.featured-package ul li {
+    color: #ffffff !important;
+}
+
+
+.featured-package ul li::before {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   14. PACKAGE FOCUS
+   ========================================================= */
+
+.package-focus {
+    margin-top: auto !important;
+
+    margin-bottom: 15px !important;
+
+    padding: 15px !important;
+
+    background: #f5f5f5 !important;
+
+    border: 1px solid #111111 !important;
+
+    border-radius: 12px !important;
+
+    color: #111111 !important;
+
+    font-size: 13px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.8 !important;
+}
+
+
+.featured-package .package-focus {
+    background: #ffffff !important;
+
+    color: #111111 !important;
+
+    border-color: #ffffff !important;
+}
+
+
+.package-focus strong {
+    font-weight: 900 !important;
+}
+
+
+/* =========================================================
+   15. BUTTON
+   ========================================================= */
+
+.package-btn {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 100% !important;
+
+    min-height: 52px !important;
+
+    padding: 12px 18px !important;
+
+    border: 1px solid #111111 !important;
+
+    border-radius: 12px !important;
+
+    background: #111111 !important;
+
+    color: #ffffff !important;
+
+    text-align: center !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+
+    font-weight: 900 !important;
+
+    transition: 0.25s ease !important;
+}
+
+
+.package-btn:hover {
+    background: #ffffff !important;
+
+    color: #111111 !important;
+}
+
+
+/* زر الباقة المميزة */
+
+.featured-package .package-btn {
+    background: #ffffff !important;
+
+    color: #112e7c !important;
+
+    border-color: #ffffff !important;
+}
+
+
+.featured-package .package-btn:hover {
+    background: transparent !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   16. CUSTOM PACKAGE
+   ========================================================= */
+
+.custom-package {
+    background: #ffffff !important;
+
+    border: 2px dashed #111111 !important;
+}
+
+
+/* =========================================================
+   17. PACKAGE NOTES
+   ========================================================= */
+
+.package-notes {
+    width: min(1180px, calc(100% - 40px)) !important;
+
+    margin: 35px auto 0 !important;
+
+    padding: 25px 30px !important;
+
+    background: #ffffff !important;
+
+    border: 1.5px solid #111111 !important;
+
+    border-radius: 16px !important;
+
+    color: #111111 !important;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+.package-notes h3 {
+    margin: 0 0 15px !important;
+
+    color: #111111 !important;
+
+    font-size: 19px !important;
+
+    font-weight: 900 !important;
+}
+
+
+.package-notes ul {
+    margin: 0 !important;
+
+    padding-right: 22px !important;
+}
+
+
+.package-notes li {
+    margin-bottom: 8px !important;
+
+    color: #111111 !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   18. TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .packages-category {
+        width: min(1180px, calc(100% - 36px)) !important;
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   19. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .packages-area {
+        padding: 50px 0 70px !important;
+    }
+
+
+    .packages-category {
+        width: calc(100% - 28px) !important;
+
+        margin-bottom: 65px !important;
+    }
+
+
+    .packages-grid {
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        max-width: 520px !important;
+
+        gap: 18px !important;
+
+        padding: 0 !important;
+    }
+
+
+    .category-heading {
+        margin-bottom: 22px !important;
+    }
+
+
+    .category-heading h2 {
+        font-size: 28px !important;
+    }
+
+
+    .category-heading p {
+        font-size: 14px !important;
+    }
+
+
+    .package-card {
+        padding: 24px 20px !important;
+
+        border-radius: 17px !important;
+    }
+
+
+    .package-card h2 {
+        font-size: 22px !important;
+    }
+
+
+    .package-card > p {
+        font-size: 13px !important;
+    }
+
+
+    .price strong {
+        font-size: 36px !important;
+    }
+
+
+    .package-card ul li {
+        font-size: 13px !important;
+
+        line-height: 1.75 !important;
+    }
+
+
+    .package-focus {
+        font-size: 12px !important;
+    }
+
+
+    .package-notes {
+        width: calc(100% - 28px) !important;
+
+        padding: 22px 20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   20. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .packages-category {
+        width: calc(100% - 24px) !important;
+    }
+
+
+    .package-card {
+        padding: 22px 17px !important;
+    }
+
+
+    .package-card h2 {
+        font-size: 20px !important;
+    }
+
+
+    .price strong {
+        font-size: 33px !important;
+    }
+
+
+    .package-card ul li {
+        font-size: 12px !important;
+    }
+
+}
